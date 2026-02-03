@@ -75,7 +75,7 @@ pip install fastapi uvicorn pydantic streamlit requests
 ### Démarrer le serveur FastAPI
 
 ```bash
-python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+python -m uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ### Vérifier que le backend fonctionne
@@ -226,15 +226,10 @@ Invoke-RestMethod -Uri "http://localhost:8000/ask" -Method Post -Headers @{"X-AP
 
 ```
 RAG_MVP_ACTUDATA/
-├── app/                          # Package Backend FastAPI
-│   ├── __init__.py              # Initialisation du package
-│   ├── main.py                  # Point d'entrée FastAPI
-│   ├── config.py                # Configuration & mapping des clés API
-│   ├── middleware.py            # Middleware de résolution du tenant
-│   ├── models.py                # Modèles Pydantic
-│   ├── data_loader.py           # Chargement des documents (isolé par tenant)
-│   ├── search.py                # Recherche par mots-clés (isolée par tenant)
-│   └── routes.py                # Endpoints API
+├── main.py                       # Backend FastAPI complet (multi-tenant)
+├── app.py                        # Frontend Streamlit
+├── requirements.txt              # Dépendances Python
+├── README.md                     # Ce fichier
 ├── tenant_files/                 # Stockage des documents par tenant
 │   ├── tenanta/                 # Documents de Tenant A
 │   │   ├── docA1_procedure_resiliation.txt
@@ -242,9 +237,11 @@ RAG_MVP_ACTUDATA/
 │   └── tenantb/                 # Documents de Tenant B
 │       ├── docB1_procedure_sinistre.txt
 │       └── docB2_produit_rc_pro_b.txt
-├── app.py                        # Frontend Streamlit
-├── requirements.txt              # Dépendances Python
-└── README.md                     # Ce fichier
+├── auth.py                       # (Legacy)
+├── models.py                     # (Legacy)
+├── rag.py                        # (Legacy)
+├── vectorstore.py                # (Legacy)
+└── data/                         # Index FAISS (Legacy)
 ```
 
 ---
