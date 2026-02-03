@@ -1,0 +1,4 @@
+Procédure sinistre
+Tout sinistre doit être déclaré dans les 5 jours ouvrés.
+L’équipe gestion transmet le dossier au gestionnaire assureur.
+Le suivi du sinistre est effectué de manière hebdomadaire.

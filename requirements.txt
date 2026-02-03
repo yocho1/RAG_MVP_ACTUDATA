@@ -1,0 +1,17 @@
+# Multi-Tenant SaaS API Dependencies
+# Install with: pip install -r requirements.txt
+
+# Web Framework
+fastapi>=0.104.0
+
+# ASGI Server
+uvicorn[standard]>=0.24.0
+
+# Data Validation
+pydantic>=2.5.0
+
+# Frontend
+streamlit>=1.28.0
+
+# HTTP Client (for Streamlit frontend)
+requests>=2.31.0
